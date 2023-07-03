@@ -1,0 +1,14 @@
+--armstrong or not 
+
+ select 
+       case when 456 =(select sum(power(substr('456',level,1),length('456')))
+       from dual
+       connect by level<= length('456')) then 'armstrong'
+       else 'Is not Armstrong'
+       end as result
+       from dual;
+
+--6789-> 6^4+7^3+8^2+9*1
+
+select (pow(substr('6789',1,1),4) +  pow(substr('6789',2,1),3) + pow(substr('6789',3,1),2) +  pow(substr('6789',4,1),1)) as powes 
+from dual;
